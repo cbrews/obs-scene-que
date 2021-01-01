@@ -13,7 +13,7 @@ import net.twasi.obsremotejava.requests.GetTransitionList.GetTransitionListRespo
 import net.twasi.obsremotejava.requests.ResponseBase
 import objects.notifications.Notifications
 import objects.que.Que
-import plugins.obs.queItems.ObsSceneQueItem
+import objects.que.SceneQueItem
 import java.util.*
 import java.util.logging.Logger
 import kotlin.collections.HashMap
@@ -388,10 +388,10 @@ object OBSClient {
         controller!!.setPreviewScene(scene.name) { }
     }
 
-    private fun getNextQueScene(): ObsSceneQueItem? {
+    private fun getNextQueScene(): SceneQueItem? {
         for (i in (Que.currentIndex() + 1)..Que.getList().size) {
-            if (Que.getAt(i) is ObsSceneQueItem) {
-                return Que.getAt(i) as ObsSceneQueItem
+            if (Que.getAt(i) is SceneQueItem) {
+                return Que.getAt(i) as SceneQueItem
             }
         }
         return null

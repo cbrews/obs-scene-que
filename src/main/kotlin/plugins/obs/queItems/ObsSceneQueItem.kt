@@ -4,13 +4,13 @@ import objects.OBSClient
 import objects.OBSState
 import objects.TScene
 import objects.que.Que
-import objects.que.QueItem
+import objects.que.SceneQueItem
 import plugins.obs.ObsPlugin
 import themes.Theme
 import java.awt.Color
 import javax.swing.JLabel
 
-class ObsSceneQueItem(override val plugin: ObsPlugin, val scene: TScene) : QueItem {
+class ObsSceneQueItem(override val plugin: ObsPlugin, override val scene: TScene) : SceneQueItem {
     override val name: String = scene.name
     override var executeAfterPrevious = false
     override var quickAccessColor: Color? = plugin.quickAccessColor
