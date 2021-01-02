@@ -86,6 +86,13 @@ class QuePanel : JPanel(), Refreshable, QueItemDropComponent {
                 logger.fine("[MouseEvent] Unhandled mouse click on Queue Panel list")
             }
         })
+        list.addListSelectionListener {
+            if (!it.valueIsAdjusting) {
+                logger.info("[ListSelectionEvent] Queue Panel list selection was updated")
+                val selectedIndex = (it.source as JList<*>).selectedIndex
+                Que.getAt(selectedIndex)?.userSelectionAction(selectedIndex)
+            }
+        }
 
         val scrollPanel = JScrollPane(list)
         scrollPanel.preferredSize = Dimension(350, 500)
