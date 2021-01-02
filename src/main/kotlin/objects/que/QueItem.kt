@@ -85,4 +85,5 @@ interface QueItem {
     }
 
     fun listCellRendererPaintAction(g: Graphics2D, queListCellRenderer: QueListCellRenderer) {}
+    fun userSelectionAction(quePanelIndex: Int) {}
 }
