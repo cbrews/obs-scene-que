@@ -72,20 +72,20 @@ class SourcePanel(private val plugin: ObsPlugin) : JPanel(), Refreshable {
         layout.autoCreateGaps = true
 
         val actionPanel = createActionPanel()
-        val sourceVisibilityFormPanel = ToggleSourceVisibilityFormPanel(plugin)
+//        val sourceVisibilityFormPanel = ToggleSourceVisibilityFormPanel(plugin)
 
         layout.setHorizontalGroup(
             layout.createSequentialGroup()
                 .addGroup(
                     layout.createParallelGroup()
                         .addComponent(actionPanel)
-                        .addComponent(sourceVisibilityFormPanel)
+                        //.addComponent(sourceVisibilityFormPanel)
                 )
         )
         layout.setVerticalGroup(
             layout.createSequentialGroup()
                 .addComponent(actionPanel)
-                .addComponent(sourceVisibilityFormPanel)
+                //.addComponent(sourceVisibilityFormPanel)
         )
         return panel
     }

@@ -38,7 +38,7 @@ class ObsPlugin : QueItemBasePlugin {
             ObsStopStreamingQueItem::class.java.simpleName -> ObsStopStreamingQueItem(this)
             ObsStartRecordingQueItem::class.java.simpleName -> ObsStartRecordingQueItem(this)
             ObsStopRecordingQueItem::class.java.simpleName -> ObsStopRecordingQueItem(this)
-            ObsToggleSourceVisibilityQueItem::class.java.simpleName -> ObsToggleSourceVisibilityQueItem.fromJson(this, jsonQueueItem)
+            // ObsToggleSourceVisibilityQueItem::class.java.simpleName -> ObsToggleSourceVisibilityQueItem.fromJson(this, jsonQueueItem)
             else -> throw IllegalArgumentException("Invalid OBS Plugin queue item: ${jsonQueueItem.className}")
         }
     }
