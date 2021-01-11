@@ -16,3 +16,4 @@ snapshots/
 tmp/
 /plugins/
 IDEAS.md
+.DS_Store
