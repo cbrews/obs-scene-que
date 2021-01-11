@@ -26,6 +26,8 @@ class QuePanel : JPanel(), Refreshable, QueItemDropComponent {
     val removeInvalidItemsButton = JButton("Remove Invalid")
     val removeAllButton = JButton("Remove All")
 
+    var selectedQueItem: QueItem? = null
+
     init {
         name = "QuePanel"
         GUI.register(this)
@@ -89,8 +91,16 @@ class QuePanel : JPanel(), Refreshable, QueItemDropComponent {
         list.addListSelectionListener {
             if (!it.valueIsAdjusting) {
                 logger.info("[ListSelectionEvent] Queue Panel list selection was updated")
+
+                // Deselect prior item
+                selectedQueItem?.userDeselectionAction()
+
+                // Get new item
                 val selectedIndex = (it.source as JList<*>).selectedIndex
-                Que.getAt(selectedIndex)?.userSelectionAction(selectedIndex)
+
+                // Select new item
+                selectedQueItem = Que.getAt(selectedIndex)
+                selectedQueItem?.userSelectionAction()
             }
         }
 
