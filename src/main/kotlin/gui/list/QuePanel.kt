@@ -139,7 +139,7 @@ class QuePanel : JPanel(), Refreshable, QueItemDropComponent {
         buttonPanel.layout = BoxLayout(buttonPanel, BoxLayout.X_AXIS)
         buttonPanel.add(removeItemButton)
         buttonPanel.add(removeInvalidItemsButton)
-        buttonPanel.add(removeAllButton)
+        // buttonPanel.add(removeAllButton)
         return buttonPanel
     }
 
